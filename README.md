@@ -14,7 +14,7 @@ contoh output semua langkah
 
 5. Menginputkan "U" apabila ingin mengubah data, maka anda akan diminta untuk menginputkan Nama terlebih dahulu. Setelah itu input data yang ingin diubah.
 
-![ubah]](foto/lab5u.png)
+![ubah](foto/lab5u.png)
 
 6. Menginputkan "H" maka akan dimintai untuk menginputkan nama yang akan dihapus. Lalu data yang telah diinputkan akan dihapus beserta _values_nya.
 
