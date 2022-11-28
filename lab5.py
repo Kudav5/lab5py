@@ -1,68 +1,67 @@
-print('Program Input Nilai')
-print('===================')
-
-data = {
-    'NIM': '',
-    'Nama': '',
-    'Nilai UTS': '',
-    'Nilai UAS': '',
-    'Nilai Tugas': '',
-}
-z = data.copy()
+print("Program Daftar Nilai")
+print("====================")
+print()
+data = {}
 while True:
-    a = input('[(L)ihat, (T)ambah, (U)bah, (H)apus, (C)ari, (K)eluar]: ')
-    if a=='T':
-        print('Tambah data')
-        b = input('Nama: ')
-        data['Nama'] = b
-        c = input('NIM: ')
-        data['NIM'] = c
-        d = input('Nilai UTS: ')
-        data['Nilai UTS'] = d
-        e = input('Nilai UAS: ')
-        data['Nilai UAS'] = e
-        f = input('Nilai Tugas: ')
-        data['Nilai Tugas'] = f
-        g = float(f)*0.3 + float(d)*0.35 + float(e)*0.35
-    elif a=='U':
-        h = input('Ubah NAMA/NIM/TUGAS/UTS/UAS: ')
-        if h=='NAMA':
-            b = input('Nama: ')
-            data['Nama'] = b
-        elif h=='NIM':
-            c = input('NIM: ')
-            data['NIM'] = c
-        elif h=='UTS':
-            d = input('Nilai UTS: ')
-            data['Nilai UTS'] = d
-        elif h=='UAS':
-            e = input('Nilai UAS: ')
-            data['Nilai UAS'] = e
-        elif h=='TUGAS':
-            f = input('Nilai Tugas: ')
-            data['Nilai Tugas'] = f
-    elif a=='H':
-        # data.pop('NIM')
-        # data.pop('Nama')
-        # data.pop('Nilai UTS')
-        # data.pop('Nilai UAS')
-        # data.pop('Nilai Tugas')
-        # data['Nama']
-        # data['NIM']
-        # data['Nilai UTS']
-        # data['Nilai UAS']
-        # data['Nilai Tugas']
-        print(z)
-        
-    elif a=='C':
-        print()
-    elif a=='L':
-        print(dict(data))
-        print('Daftar Nilai')
-        print('============================================================')
-        print('|  NO  |  NIM  |  Nama  |  Tugas  |  UTS  |  UAS  |  AKHIR |')
-        print('============================================================')
-        print('|  1   |  ', data['NIM'], '  |  ', data['Nama'], '  |  ', data['Nilai Tugas'], '  |  ', data['Nilai UTS'], '  |  ', data['Nilai UAS'], '  |  ', g, '  |  ')
-    elif a=='K':
-        break
+    print()
+    a = input("[(L)ihat, (T)ambah, (U)bah, (H)apus, (C)ari, (K)eluar] :")
+    print()
 
+    if a == "T":
+        print("Tambah Data")
+        nama = input("Nama\t: ")
+        nim = int(input("NIM\t: "))
+        tugas = int(input("Nilai Tugas\t: "))
+        uts = int(input("Nilai UTS\t: "))
+        uas = int(input("Nilai UAS\t: "))
+        akhir = (int(tugas)*30/100) + (int(uts)*35/100) + (int(uas)*35/100)
+        data[nama] = nim, tugas, uts, uas, akhir
+        print()
+
+    elif a == "U":
+        print("Ubah Data")
+        nama = input("Masukkan Nama :")
+        print()
+        if data.keys():
+            tugas = int(input("Nilai Tugas\t: "))
+            uts = int(input("Nilai UTS\t: "))
+            uas = int(input("Nilai UAS\t: "))
+            akhir = (int(tugas)*30/100) + (int(uts)*35/100) + (int(uas)*35/100)
+
+    elif a == "H":
+        print("Hapus Data")
+        nama = input("Masukkan Nama :")
+        if nama in data.keys():
+            del data[nama]
+
+    elif a == "C":
+        print("Cari Data")
+        nama = input("Masukkan Nama  :")
+        if data.keys():
+            print(72*"=")
+            print("| {0:^10} | {1:^10} | {2:^6} | {3:^6} | {4:^6} | {5:^12} |".format("Nama", "NIM", "Tugas", "UTS", "UAS", "Nilai Akhir"))
+            print(72*"=")
+            print("| {0:>10} | {1:>10} | {2:>6} | {3:>5} | {4:>6} | {5:>12} |".format(nama, nim, tugas, uts, uas, akhir))
+            print(72*"=")
+            print()
+
+    elif a == "L":
+        if data.items():
+            print("Daftar Nilai")
+            print(72*"=")
+            print("| {0:^10} | {1:^10} | {2:^6} | {3:^6} | {4:^6} | {5:^12} |".format("Nama", "NIM", "Tugas", "UTS", "UAS", "Nilai Akhir"))
+            print(72*"=")
+            for item in data.items():
+                print("| {0:>10} | {1:>10} | {2:>6} | {3:>6} | {4:>6} | {5:>12} |".format(nama, nim, tugas, uts, uas, akhir))
+                print(72*"=")
+            print()
+        else:
+            print("Daftar Nilai")
+            print(72*"=")
+            print("| {0:^10} | {1:^10} | {2:^6} | {3:^6} | {4:^6} | {5:^12} |".format("Nama", "NIM", "Tugas", "UTS", "UAS", "Nilai Akhir"))
+            print(72*"=")
+            print("|                            Tidak Ada Data                           |")
+            print(72*"=")
+            print()
+    elif a == "K":
+        break
