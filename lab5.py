@@ -9,13 +9,13 @@ while True:
 
     if a == "T":
         print("Tambah Data")
-        nama = input("Nama\t: ")
         nim = int(input("NIM\t: "))
-        tugas = int(input("Nilai Tugas\t: "))
+        nama = input("Nama\t: ")
+        tgs = int(input("Nilai Tugas\t: "))
         uts = int(input("Nilai UTS\t: "))
         uas = int(input("Nilai UAS\t: "))
-        akhir = (int(tugas)*30/100) + (int(uts)*35/100) + (int(uas)*35/100)
-        data[nama] = nim, tugas, uts, uas, akhir
+        akhir = (int(tgs)*30/100) + (int(uts)*35/100) + (int(uas)*35/100)
+        data[nama] = nim, tgs, uts, uas, akhir
         print()
 
     elif a == "U":
@@ -23,10 +23,10 @@ while True:
         nama = input("Masukkan Nama :")
         print()
         if data.keys():
-            tugas = int(input("Nilai Tugas\t: "))
+            tgs = int(input("Nilai Tugas\t: "))
             uts = int(input("Nilai UTS\t: "))
             uas = int(input("Nilai UAS\t: "))
-            akhir = (int(tugas)*30/100) + (int(uts)*35/100) + (int(uas)*35/100)
+            akhir = (int(tgs)*30/100) + (int(uts)*35/100) + (int(uas)*35/100)
 
     elif a == "H":
         print("Hapus Data")
@@ -41,7 +41,7 @@ while True:
             print(72*"=")
             print("| {0:^10} | {1:^10} | {2:^6} | {3:^6} | {4:^6} | {5:^12} |".format("Nama", "NIM", "Tugas", "UTS", "UAS", "Nilai Akhir"))
             print(72*"=")
-            print("| {0:>10} | {1:>10} | {2:>6} | {3:>5} | {4:>6} | {5:>12} |".format(nama, nim, tugas, uts, uas, akhir))
+            print("| {0:>10} | {1:>10} | {2:>6} | {3:>5} | {4:>6} | {5:>12} |".format(nama, nim, tgs, uts, uas, akhir))
             print(72*"=")
             print()
 
@@ -52,7 +52,7 @@ while True:
             print("| {0:^10} | {1:^10} | {2:^6} | {3:^6} | {4:^6} | {5:^12} |".format("Nama", "NIM", "Tugas", "UTS", "UAS", "Nilai Akhir"))
             print(72*"=")
             for item in data.items():
-                print("| {0:>10} | {1:>10} | {2:>6} | {3:>6} | {4:>6} | {5:>12} |".format(nama, nim, tugas, uts, uas, akhir))
+                print("| {0:>10} | {1:>10} | {2:>6} | {3:>6} | {4:>6} | {5:>12} |".format(nama, nim, tgs, uts, uas, akhir))
                 print(72*"=")
             print()
         else:
